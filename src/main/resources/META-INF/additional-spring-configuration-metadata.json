@@ -1,0 +1,27 @@
+{"properties": [
+  {
+    "name": "api.catalog.consultar-produto.url",
+    "type": "java.lang.String",
+    "description": "Url completa da API de consultarProduto"
+  },
+  {
+    "name": "api.catalog.port",
+    "type": "java.lang.Integer",
+    "description": "Porta da API de catalogo"
+  },
+  {
+    "name": "api.catalog.url",
+    "type": "java.lang.String",
+    "description": "Url base da API de catalogo"
+  },
+  {
+    "name": "api.catalog.host",
+    "type": "java.lang.String",
+    "description": "Host da API de catalogo"
+  },
+  {
+    "name": "api.catalog.consultar-oferta.url",
+    "type": "java.lang.String",
+    "description": "Url completa da API de consultarOferta"
+  }
+]}

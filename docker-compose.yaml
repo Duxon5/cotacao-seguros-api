@@ -1,0 +1,62 @@
+version: '1.0'
+
+networks:
+  app-network: 
+  
+services:
+  ctn-cotacao-seguros-api:
+    image: seguros/cotacao-seguros-api:v1.0
+    build: .
+    container_name: ctn-cotacao-seguros-api
+    restart: unless-stopped
+    ports:
+    - 4321:4321
+    - 4322:4322
+    networks:
+    - app-network
+    
+  ctn-prometheus:
+    image: prom/prometheus:v2.35.0
+    container_name: ctn-prometheus
+    restart: unless-stopped
+    volumes:
+    - ./data/prometheus/config/prometheus.yaml:/etc/prometheus/prometheus.yaml
+    command:
+    - --config.file=/etc/prometheus/prometheus.yaml
+    ports:
+    - 9090:9090
+    networks:
+    - app-network
+    
+  ctn-grafana:
+    image: grafana/grafana-oss:8.5.2
+    pull_policy: always
+    container_name: ctn-grafana
+    restart: unless-stopped
+    user: root
+    ports:
+    - 3000:3000
+    networks:
+    - app-network
+#    volumes:
+#    - ./data/grafana:/var/lib/grafana
+#    environment:
+#    - GF_SECURITY_ADMIN_PASSWORD=admin
+#    - GF_USERS_ALLOW_SIGN_UP=false
+#    - GF_SERVER_DOMAIN=localhost
+#    - GF_LOG_MODE=console file
+#    - GF_LOG_FILTERS=alerting.notifier.slack:debug alertmanager:debug ngalert:debug
+#    - GF_PATHS_PROVISIONING=/etc/grafana/provisioning
+#    - GF_AUTH_ANONYMOUS_ENABLED=true
+#    - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
+      
+  ctn-loki:
+    image: grafana/loki:2.2.1
+    container_name: ctn-loki
+    volumes:
+      - ./data/loki/config/loki-config.yaml:/etc/loki/loki-config.yaml
+    command: -config.file=/etc/loki/loki-config.yaml
+    ports:
+    - 3100:3100
+    networks:
+    - app-network
