@@ -44,30 +44,29 @@ Para conseguir executar o projeto, garanta que tenha instalado os recursos abaix
 * Execute: docker compose up --build
 
 ## Para visualizar logs no Grafana:
-Como configurar os dashboards do grafana:
-1. Acessar a URL http://localhost:3100
+### 1. Acessar a URL http://localhost:3100
 
-2. Data Source do Prometheus
-	2.1. Acessar o menu lateral esquerdo > engrenagem > data sources
-	2.2. Adicionar data source do Prometheus
-	2.3. Na URL utilizar http://ctn-prometheus:9090
-	2.4. clicar em Save & Test
+### 2. Data Source do Prometheus
+* 2.1. Acessar o menu lateral esquerdo > engrenagem > data sources
+* 2.2. Adicionar data source do Prometheus
+* 2.3. Na URL utilizar http://ctn-prometheus:9090
+* 2.4. clicar em Save & Test
 
-3. Data Source do Loki
-	3.1. Acessar o menu lateral esquerdo > engrenagem > data sources
-	3.2. Adicionar data source do Loki
-	3.3. Na URL utilizar http://ctn-loki:3100
-	3.4. clicar em Save & Test
+### 3. Data Source do Loki
+* 3.1. Acessar o menu lateral esquerdo > engrenagem > data sources
+* 3.2. Adicionar data source do Loki
+* 3.3. Na URL utilizar http://ctn-loki:3100
+* 3.4. clicar em Save & Test
 
-4. Painel do Prometheus
-	4.1. Acessar o menu lateral esquerdo > simbolo de mais > import
-	4.2. Preencher com o ID 1860
-	4.3. Clicar em Load
-	4.4. Selecionar o data source do prometheus
-	4.5. Clicar em Import
+### 4. Painel do Prometheus
+* 4.1. Acessar o menu lateral esquerdo > simbolo de mais > import
+* 4.2. Preencher com o ID 1860
+* 4.3. Clicar em Load
+* 4.4. Selecionar o data source do prometheus
+* 4.5. Clicar em Import
 
-5. Painel do Loki
-	5.1. Acessar o menu lateral esquerdo > bussola
-	5.2. Selecionar o datasource do Loki
-	5.3. No Log browser, filtrar por {app="projeto-cotacao-seguros-api"}
-	5.4. Run Query
+### 5. Painel do Loki
+* 5.1. Acessar o menu lateral esquerdo > bussola
+* 5.2. Selecionar o datasource do Loki
+* 5.3. No Log browser, filtrar por {app="projeto-cotacao-seguros-api"}
+* 5.4. Run Query
