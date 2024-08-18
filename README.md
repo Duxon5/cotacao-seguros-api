@@ -1,6 +1,7 @@
 # Cotação Seguros API
 
-Uma API REST para cotação de seguros, desenvolvida em Spring Boot com o objetivo de resolver o desafio da imagem abaixo: 
+Uma API REST para cotação de seguros, desenvolvida em Spring Boot com o objetivo de resolver o desafio da imagem abaixo:
+ 
 <img src="./img/desafio.png">
 
 Além de resolver o desafio da imagem, também é necessário realizar testes unitários, testes de integração e monitoramento.
