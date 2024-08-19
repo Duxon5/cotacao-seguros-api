@@ -31,6 +31,18 @@ public class CustomerDTO {
 		this.phoneNumber = customerEntity.getPhoneNumber();
 	}
 
+	public CustomerDTO(String documentNumber, String name, String type, String gender, LocalDate dateOfBirth,
+			String email, Long phoneNumber) {
+		super();
+		this.documentNumber = documentNumber;
+		this.name = name;
+		this.type = type;
+		this.gender = gender;
+		this.dateOfBirth = dateOfBirth;
+		this.email = email;
+		this.phoneNumber = phoneNumber;
+	}
+
 	public String getDocumentNumber() {
 		return documentNumber;
 	}

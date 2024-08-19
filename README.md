@@ -41,6 +41,7 @@ Para conseguir executar o projeto, garanta que tenha instalado os recursos abaix
 ## Para executar:
 * Baixe o projeto
 * Acesse a pasta raíz do projeto
+* Para garantir que está funcionando, execute: mvn test -Dtest="com.banco.ficticio.cotacao.seguros.runner.TestSuite"
 * Execute: mvn clean install
 * Execute: docker compose up --build
 
