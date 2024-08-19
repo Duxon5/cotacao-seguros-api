@@ -18,7 +18,6 @@ Além de resolver o desafio da imagem, também é necessário realizar testes un
 A aplicação utiliza uma arquitetura MVC e segue o seguinte fluxo:
 * **Requisição:** O cliente envia uma requisição HTTP para a API.
 * **Validação:** A API valida os dados da requisição.
-* **Kafka:** Dados válidos são enviados para um tópico Kafka para processamento assíncrono.
 * **Resposta:** A API retorna o ID único para consulta posterior.
 * **Monitoramento:** Grafana, Loki e Prometheus monitoram o sistema em tempo real.
 
