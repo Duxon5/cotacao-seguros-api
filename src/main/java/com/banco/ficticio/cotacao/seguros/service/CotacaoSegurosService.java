@@ -8,5 +8,6 @@ public interface CotacaoSegurosService {
 
 	public Long solicitarCotacao(InsuranceQuoteDTO insuranceQuoteDTO) throws CotacaoSegurosException;
 	public InsurancePolicyDTO consultarCotacao(Long insurancePolicyId) throws CotacaoSegurosException;
+	public void atualizarStatusParaFinalizado(Long insurancePolicyId) throws CotacaoSegurosException;
 	
 }

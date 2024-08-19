@@ -73,4 +73,23 @@ public class CotacaoSegurosController {
 
 		return new ResponseEntity<>(insurancePolicyDTO, HttpStatus.OK);
 	}
+
+	@GetMapping(value="/atualizarStatusParaFinalizado", produces = "application/json")
+	public ResponseEntity<?> atualizarStatusParaFinalizado(@RequestParam("id") Long id) {
+
+		try {
+			cotacaoSegurosService.atualizarStatusParaFinalizado(id);
+			log.info("Sucesso - /atualizarStatusParaFinalizado");
+		} catch(CotacaoSegurosException ex) {
+			if(ex.getValidacao().isVazio()) {
+				log.error("/atualizarStatusParaFinalizado HttpStatus.INTERNAL_SERVER_ERROR | ex: " + ex);
+				return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+			} else {
+				log.warn("/atualizarStatusParaFinalizado validação: "+ex.getValidacao());
+				return ResponseEntity.badRequest().body(ex.getValidacao());
+			}
+		}
+
+		return new ResponseEntity<>(HttpStatus.OK);
+	}
 }

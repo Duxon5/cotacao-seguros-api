@@ -35,7 +35,6 @@ public class MockCatalogServerConfig {
 		for (int i = 0; i < expectations.length; i++) {
 			mockCatalogServer.sendExpectation(expectations[i]);
 		}
-		
 	}
 
 	@PreDestroy

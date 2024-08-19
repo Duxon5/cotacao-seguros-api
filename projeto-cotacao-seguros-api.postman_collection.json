@@ -1,0 +1,176 @@
+{
+	"info": {
+		"_postman_id": "10dada6d-6ed3-4928-ac47-23d81174daac",
+		"name": "projeto-cotacao-seguros-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19138787"
+	},
+	"item": [
+		{
+			"name": "solicitarCotacao",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"product_id\": \"1b2da7cc-b367-4196-8a78-9cfeec21f587\",\r\n\t\"offer_id\": \"adc56d77-348c-4bf0-908f-22d402ee715c\",\r\n\t\"category\": \"HOME\",\r\n\t\"total_monthly_premium_amount\": \"75.25\",\r\n\t\"total_coverage_amount\": 825000.00,\r\n\t\"coverages\": {\r\n\t\t\"Incêndio\": 250000.00,\r\n\t\t\"Desastres naturais\": 500000.00,\r\n\t\t\"Responsabiliadade civil\": 75000.00\r\n\t},\r\n\t\"assistances\": [\r\n\t\t\"Encanador\",\r\n\t\t\"Eletricista\",\r\n\t\t\"Chaveiro 24h\"\r\n\t],\r\n\t\"customer\": {\r\n\t\t\"document_number\": \"36205578900\",\r\n\t\t\"name\": \"John Wick\",\r\n\t\t\"type\": \"NATURAL\",\r\n\t\t\"gender\": \"MALE\",\r\n\t\t\"date_of_birth\": \"1973-05-02\",\r\n\t\t\"email\": \"johnwick@gmail.com\",\r\n\t\t\"phone_number\": 11950503030\r\n\t}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4321/seguros/solicitarCotacao",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4321",
+					"path": [
+						"seguros",
+						"solicitarCotacao"
+					],
+					"query": [
+						{
+							"key": "var",
+							"value": "abc",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "consultarCotacao",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4321/seguros/consultarCotacao?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4321",
+					"path": [
+						"seguros",
+						"consultarCotacao"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "consultarProduto",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"product_id\": \"1b2da7cc-b367-4196-8a78-9cfeec21f587\",\r\n\t\"offer_id\": \"adc56d77-348c-4bf0-908f-22d402ee715c\",\r\n\t\"category\": \"HOME\",\r\n\t\"total_monthly_premium_amount\": 75.25,\r\n\t\"total_coverage_amount\": 825000.00,\r\n\t\"coverages\": {\r\n\t\t\"Incêndio\": 250000.00,\r\n\t\t\"Desastres naturais\": 500000.00,\r\n\t\t\"Responsabiliadade civil\": 75000.00\r\n\t},\r\n\t\"assistances\": [\r\n\t\t\"Encanador\",\r\n\t\t\"Eletricista\",\r\n\t\t\"Chaveiro 24h\"\r\n\t],\r\n\t\"customer\": {\r\n\t\t\"document_number\": \"36205578900\",\r\n\t\t\"name\": \"John Wick\",\r\n\t\t\"type\": \"NATURAL\",\r\n\t\t\"gender\": \"MALE\",\r\n\t\t\"date_of_birth\": \"1973-05-02\",\r\n\t\t\"email\": \"johnwick@gmail.com\",\r\n\t\t\"phone_number\": 11950503030\r\n\t}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4322/catalogo/produtos/consultarProduto?id=3b2da7cc-b367-4196-8a78-9cfeec21f587",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4322",
+					"path": [
+						"catalogo",
+						"produtos",
+						"consultarProduto"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3b2da7cc-b367-4196-8a78-9cfeec21f587"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "consultarOferta",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"product_id\": \"1b2da7cc-b367-4196-8a78-9cfeec21f587\",\r\n\t\"offer_id\": \"adc56d77-348c-4bf0-908f-22d402ee715c\",\r\n\t\"category\": \"HOME\",\r\n\t\"total_monthly_premium_amount\": 75.25,\r\n\t\"total_coverage_amount\": 825000.00,\r\n\t\"coverages\": {\r\n\t\t\"Incêndio\": 250000.00,\r\n\t\t\"Desastres naturais\": 500000.00,\r\n\t\t\"Responsabiliadade civil\": 75000.00\r\n\t},\r\n\t\"assistances\": [\r\n\t\t\"Encanador\",\r\n\t\t\"Eletricista\",\r\n\t\t\"Chaveiro 24h\"\r\n\t],\r\n\t\"customer\": {\r\n\t\t\"document_number\": \"36205578900\",\r\n\t\t\"name\": \"John Wick\",\r\n\t\t\"type\": \"NATURAL\",\r\n\t\t\"gender\": \"MALE\",\r\n\t\t\"date_of_birth\": \"1973-05-02\",\r\n\t\t\"email\": \"johnwick@gmail.com\",\r\n\t\t\"phone_number\": 11950503030\r\n\t}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4322/catalogo/produtos/consultarOferta?id=adc56d77-348c-4bf0-908f-22d402ee715c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4322",
+					"path": [
+						"catalogo",
+						"produtos",
+						"consultarOferta"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "adc56d77-348c-4bf0-908f-22d402ee715c"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "atualizarStatusParaFinalizado",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4321/seguros/atualizarStatusParaFinalizado?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4321",
+					"path": [
+						"seguros",
+						"atualizarStatusParaFinalizado"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

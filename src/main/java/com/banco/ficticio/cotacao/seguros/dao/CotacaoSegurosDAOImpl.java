@@ -85,4 +85,18 @@ public class CotacaoSegurosDAOImpl implements CotacaoSegurosDAO {
 	    return null;
 	}
 
+	@Override
+	public void atualizarStatusParaFinalizado(Long insurancePolicyId) {
+
+		String hql =  "UPDATE InsurancePolicyEntity p "
+					+ "SET p.requestStatus = 1 "
+					+ "WHERE p.insurancePolicyId = :insurancePolicyId";
+
+	    Query query = entityManager.createQuery(hql);
+	    
+	    query.setParameter("insurancePolicyId", insurancePolicyId);
+	    
+	    query.executeUpdate();
+	}
+
 }

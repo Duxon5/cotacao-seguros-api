@@ -162,4 +162,29 @@ public class CotacaoSegurosValidate {
 		return validacaoEntity;
 	}
 
+	public ValidacaoEntity atualizarStatusParaFinalizado(
+			Long insurancePolicyId, 
+			InsurancePolicyEntity insurancePolicyEntity
+	) throws CotacaoSegurosException  {
+		
+		ValidacaoEntity validacaoEntity = new ValidacaoEntity();
+		
+		if(insurancePolicyId == null) {
+			validacaoEntity.addMensagem("O id da apólice não foi informado.");
+			throw new CotacaoSegurosException(validacaoEntity);
+		}
+		
+		if(insurancePolicyEntity == null) {
+			validacaoEntity.addMensagem("Não existe apólice com este id.");
+			throw new CotacaoSegurosException(validacaoEntity);
+		}
+		
+		if(insurancePolicyEntity.getRequestStatus() == StatusPolicyEnum.FINALIZADO) {
+			validacaoEntity.addMensagem("Esta apólice já consta como finalizada.");
+			throw new CotacaoSegurosException(validacaoEntity);
+		}
+		
+		return validacaoEntity;
+	}
+
 }

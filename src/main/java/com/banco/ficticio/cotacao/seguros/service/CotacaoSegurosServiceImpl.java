@@ -126,4 +126,16 @@ public class CotacaoSegurosServiceImpl implements CotacaoSegurosService {
 		return offerDTO;
 	}
 
+	@Override
+	public void atualizarStatusParaFinalizado(Long insurancePolicyId) throws CotacaoSegurosException {
+		try {
+			InsurancePolicyEntity insurancePolicyEntity = cotacaoSegurosDAO.buscarPorInsurancePolicyId(insurancePolicyId);
+			validate.atualizarStatusParaFinalizado(insurancePolicyId, insurancePolicyEntity);
+			
+			cotacaoSegurosDAO.atualizarStatusParaFinalizado(insurancePolicyId);
+		} catch(CotacaoSegurosException e) {
+			throw new CotacaoSegurosException(e);
+		}
+	}
+
 }
