@@ -9,7 +9,6 @@ Além de resolver o desafio da imagem, também é necessário realizar testes un
 ## Tecnologias
 * **Backend:** Java 17, Spring Boot, Spring Data JPA
 * **Banco de dados:** H2 (em memória)
-* **Mensageria:** Apache Kafka
 * **Monitoramento:** Grafana, Loki, Prometheus
 * **Testes:** JUnit 5, Mock Server
 * **Gerenciamento de dependências:** Maven
@@ -20,7 +19,6 @@ A aplicação utiliza uma arquitetura MVC e segue o seguinte fluxo:
 * **Requisição:** O cliente envia uma requisição HTTP para a API.
 * **Validação:** A API valida os dados da requisição.
 * **Kafka:** Dados válidos são enviados para um tópico Kafka para processamento assíncrono.
-* **Processamento:** Kafka processa a mensagem e gera um ID único.
 * **Resposta:** A API retorna o ID único para consulta posterior.
 * **Monitoramento:** Grafana, Loki e Prometheus monitoram o sistema em tempo real.
 
@@ -38,12 +36,20 @@ Para conseguir executar o projeto, garanta que tenha instalado os recursos abaix
 * **Docker:** Instalar o Docker.
 * **Docker Compose:** Instalar o Docker Compose.
 
+## Pendencias (IMPORTANTE)
+Era requerido utilizar mensageria no desafio, porém não consegui terminar a tempo.
+Desta forma, para poder atualizar as apólices para FINALIZADO, existe o endpoint /atualizarStatusParaFinalizado que recebe o id da apólice e atualizar o status.
+Esta funcionalidade deveria ter sido feita através de mensageria.
+
 ## Para executar:
 * Baixe o projeto
 * Acesse a pasta raíz do projeto
 * Para garantir que está funcionando, execute: mvn test -Dtest="com.banco.ficticio.cotacao.seguros.runner.TestSuite"
-* Execute: mvn clean install
+* Execute: mvn clean install -DskipTests
 * Execute: docker compose up --build
+
+## Para testar os endpoints:
+Importe e utilize a Collection do postman: projeto-cotacao-seguros-api.postman_collection
 
 ## Para visualizar logs no Grafana:
 ### 1. Acessar a URL http://localhost:3100
