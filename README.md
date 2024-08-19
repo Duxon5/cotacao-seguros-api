@@ -28,17 +28,17 @@ A aplicação utiliza uma arquitetura MVC e segue o seguinte fluxo:
 * **Prometheus:** http://localhost:9090 ou http://ctn-prometheus:9090
 * **Grafana:** http://localhost:3000 ou http://ctn-grafana:3000
 
+## Pendencias (IMPORTANTE)
+Era requerido utilizar mensageria no desafio, porém não consegui terminar a tempo.
+Desta forma, para poder atualizar as apólices para FINALIZADO, existe o endpoint /atualizarStatusParaFinalizado que recebe o id da apólice e atualizar o status.
+Esta funcionalidade deveria ter sido feita através de mensageria.
+
 ## Pré-requisitos
 Para conseguir executar o projeto, garanta que tenha instalado os recursos abaixo:
 * **Java 17:** Instalar o JDK 17.
 * **Maven:** Instalar o Apache Maven.
 * **Docker:** Instalar o Docker.
 * **Docker Compose:** Instalar o Docker Compose.
-
-## Pendencias (IMPORTANTE)
-Era requerido utilizar mensageria no desafio, porém não consegui terminar a tempo.
-Desta forma, para poder atualizar as apólices para FINALIZADO, existe o endpoint /atualizarStatusParaFinalizado que recebe o id da apólice e atualizar o status.
-Esta funcionalidade deveria ter sido feita através de mensageria.
 
 ## Para executar:
 * Baixe o projeto
